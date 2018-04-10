@@ -15,6 +15,13 @@
     background-color: #d5f4e6;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #80cedc !important;
+    border-color: #80cedc !important;
+    font-weight: bolder !important;
+}
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
