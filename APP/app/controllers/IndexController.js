@@ -10,7 +10,7 @@
 
 (function() {
 
-    var IndexController = function($scope, $log, $location, $routeParams, $cookieStore, $rootScope) {
+    var IndexController = function($scope, $log, $location, $routeParams, $cookieStore, $rootScope, $cookieStore) {
 
 
         // La funcion de isActive nos retorna el valor del path en el que se encuentra el cliente y en base a esto

@@ -17,13 +17,14 @@
         //Se iguala el valor del scope.welcome para obtener el nombre del cliente atravez de la cookie
 
         $scope.welcome = $cookieStore.get('uname');
+        $scope.timerRunning = true;
 
 
     };
 
     HomeController.$inject = ['$scope', '$log', '$location', '$routeParams', '$cookieStore', '$rootScope'];
 
-    angular.module('MayoristaApp')
+    angular.module('jaimeapp')
         .controller('HomeController', HomeController);
 
 }());

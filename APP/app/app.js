@@ -21,8 +21,9 @@
                 resolve: {
                     "check": function($location, $rootScope, $cookieStore) {
                         $rootScope.isLoged = $cookieStore.get('login');
+                        console.log($rootScope.isLoged);
                         if ($rootScope.isLoged === true) {
-                            $location.path('/dashboard');
+                            $location.path('/home');
 
                         }
                     }
@@ -31,7 +32,7 @@
                 templateUrl: 'app/views/login.html'
 
             })
-            .when('/dashboard', {
+            .when('/home', {
                 resolve: {
                     "check": function($location, $rootScope, $cookieStore) {
                         $rootScope.isLoged = $cookieStore.get('login');
@@ -44,7 +45,10 @@
                 controller: 'HomeController',
                 templateUrl: 'app/views/home.html'
             })
-
+            .when('/logout', {
+                controller: 'LogoutController',
+                templateUrl: 'app/views/logout.html'
+            })
 
 
         .otherwise({ templateUrl: 'app/views/error.html' });
