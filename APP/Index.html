@@ -15,11 +15,11 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-light nav-color">
+        <nav class="navbar navbar-light nav-color" ng-controller="IndexController">
             <a class="navbar-brand align-middle" href="#">
                 <img src="media/pusheen.png" width="60" height="60" class="d-inline-block " alt=""> Pídeselo a jaime
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button ng-hide="isActive('/')" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -41,7 +41,7 @@
     </header>
     <div id="block" class="slide-animation"></div>
 
-    <main role="main" ng-view class="main" ng-controller="IndexController">
+    <main role="main" ng-view class="main">
 
     </main>
     <footer class="footer">

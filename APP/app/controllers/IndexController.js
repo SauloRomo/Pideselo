@@ -23,6 +23,10 @@
             window.history.back();
         };
 
+
+
+
+
     };
 
     IndexController.$inject = ['$scope', '$log', '$location', '$routeParams', '$cookieStore', '$rootScope'];
