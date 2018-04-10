@@ -16,29 +16,34 @@
         // y este envie un json ecriptado con la respuesta y de esta manera validar estos campos
         // asi mismo se escribe la cookie de sesion para que la sesion del cliente se guarde.
 
-        $scope.calldata = function(user) {
-            LoginFactory.getLogin(user).success(function(data, status, header) {
-                    console.log(data);
-                    var codificado = data.token.split('.')[1];
-                    var perfil = JSON.parse(decode(codificado));
-                    var unombre = perfil.usuario;
-                    var usertype = perfil.rol;
-                    var login = true;
-                    var expireDate = new Date();
-                    expireDate.setDate(expireDate.getDate() + 1);
-                    $cookieStore.put('uname', unombre, { 'expires': expireDate });
-                    $cookieStore.put('login', login, { 'expires': expireDate });
-                    $cookieStore.put('rol', usertype, { 'expires': expireDate });
 
-                    $rootScope.isLoged = $cookieStore.get('login');
-                    console.log(perfil);
-                    console.log($rootScope.isLoged);
-                    $location.path('/dashboard');
-                })
-                .error(function(data, status, headers, config) {
-                    $log.log('data error: ' + data + ' status: ' + status + ' headers: ' + headers + ' config: ' + config);
-                    $scope.error = "Campos incorrectos";
-                });
+        /* Comento esta funcion con ella podras enviar los datos 
+
+            $scope.calldata = function(user) {
+                LoginFactory.getLogin(user).success(function(data, status, header) {
+                        console.log(data);
+                        var codificado = data.token.split('.')[1];
+                        var perfil = JSON.parse(decode(codificado));
+                        var unombre = perfil.usuario;
+                        var usertype = perfil.rol;
+                        var login = true;
+                        var expireDate = new Date();
+                        expireDate.setDate(expireDate.getDate() + 1);
+                        $cookieStore.put('uname', unombre, { 'expires': expireDate });
+                        $cookieStore.put('login', login, { 'expires': expireDate });
+                        $cookieStore.put('rol', usertype, { 'expires': expireDate });
+
+                        $rootScope.isLoged = $cookieStore.get('login');
+                        console.log(perfil);
+                        console.log($rootScope.isLoged);
+                        $location.path('/Home');
+                    })
+                    .error(function(data, status, headers, config) {
+                        $log.log('data error: ' + data + ' status: ' + status + ' headers: ' + headers + ' config: ' + config);
+                        $scope.error = "Campos incorrectos";
+                    });
+
+                   
             // La funcion decode decodifica el texto del json el cual esta codificado en base64
             // y regresa a la funcion de get login los campos descriptados del cliente como su nombre
             function decode(str) {
@@ -57,7 +62,7 @@
                 }
                 return window.atob(output);
             }
-        }
+        } */
 
     };
     LoginController.$inject = ['$scope', '$log', '$location', '$routeParams', '$cookieStore', 'LoginFactory', '$rootScope'];
