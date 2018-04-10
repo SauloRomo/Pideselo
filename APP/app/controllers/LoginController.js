@@ -21,7 +21,7 @@
 
         $scope.calldata = function(user) {
             console.log(user);
-            if (user.login === "saulo" && user.password === "1234") {
+            if (user.login === "iteso" && user.password === "1234") {
                 var unombre = user.login;
                 var usertype = user.password;
                 var pass = true;
